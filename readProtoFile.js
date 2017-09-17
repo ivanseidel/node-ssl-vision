@@ -5,7 +5,7 @@ const path = require('path')
  * This method will import files from protobuf files recursivelly and include
  * in the output, removing the import statements.
  */
-module.exports = function LoadProtoFile(mainFile, {loaded} = {}) {
+module.exports = function mergeProtoFiles(mainFile, {loaded} = {}) {
   if (!mainFile.startsWith('/'))
     throw new Error('File must be absolute and start with `/`')
 
@@ -46,7 +46,7 @@ module.exports = function LoadProtoFile(mainFile, {loaded} = {}) {
     if (importStatement) {
       let importName = importStatement[1]
       let importPath = path.join(dir, importName)
-      outputLines.push(LoadProtoFile(importPath, {loaded}))
+      outputLines.push(mergeProtoFiles(importPath, {loaded}))
       continue
     }
 

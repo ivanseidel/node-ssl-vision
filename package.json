@@ -1,4 +1,28 @@
 {
+  "name": "ssl-vision",
+  "version": "1.0.0",
+  "description": "Receive Multicast parsed data from Robocup SSL Vision with NodeJS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanseidel/node-require-smart.git"
+  },
+  "keywords": [
+    "robocup",
+    "ssl vision",
+    "protocol-buffers",
+    "multicast",
+    "ssl vision robocup"
+  ],
+  "authors": [
+    "Ivan Seidel Gomes",
+    "João Pedro Vilas Boas"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivanseidel/ssl-vision-nodejs/issues"
+  },
+  "homepage": "https://github.com/ivanseidel/ssl-vision-nodejs",
   "dependencies": {
     "protocol-buffers": "^3.2.1"
   }
