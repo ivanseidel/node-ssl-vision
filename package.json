@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "protocol-buffers": "^3.2.1"
+  }
+}
