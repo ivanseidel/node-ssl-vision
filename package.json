@@ -1,6 +1,6 @@
 {
   "name": "ssl-vision",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Receive Multicast parsed data from Robocup SSL Vision with NodeJS",
   "main": "index.js",
   "repository": {
@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ivanseidel/ssl-vision-nodejs/issues"
+    "url": "https://github.com/ivanseidel/node-ssl-vision/issues"
   },
-  "homepage": "https://github.com/ivanseidel/ssl-vision-nodejs",
+  "homepage": "https://github.com/ivanseidel/node-ssl-vision",
   "dependencies": {
     "protocol-buffers": "^3.2.1"
   }
