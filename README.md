@@ -24,28 +24,52 @@ This library was created for three main reasons:
 ## Usage
 
 ```javascript
-const SslVision = require('ssl-vision')
+const SSLVision = require('ssl-vision')
 
-async start() {
-  let client = new SslVision(<Optional IP>, <Optional PORT>)
-  
+let client = new SSLVision(<Optional IP>, <Optional PORT>)
+
+// Start listening to UDP Multicast packets and parsing
+client.connect()
+
+// Reads all data comming from the SSL Vision parsed as JSON Objects
+client.on('data', (data) => {
+  console.log(data)
+  // Outputs: { detection: <DetectionData>, geometry: <GeometryData> }
+})
+
+// Listens only to geometry data
+client.on('geometry', (geometry) => {
+  // Outputs <GeometryData>  
+})
+
+// Listens only to detection data
+client.on('detection', (detection) => {
+  // Outputs <DetectionData>  
+})
+```
+
+### Connection Callback
+
+```javascript
+
+// Will run once connection is made
+client.connect(() => {
+  console.log('connected!')
+})
+
+// Will wait until connected
+async function start() {
   await client.connect()
-
-  // Reads all data comming from the SSL Vision parsed as JSON Objects
-  client.on('data', (data) => {
-    console.log(data)
-    // Outputs: { detection: <DetectionData>, geometry: <GeometryData> }
-  })
-
-  // Listens only to geometry data
-  client.on('geometry', (geometry) => {
-    // Outputs <GeometryData>  
-  })
+  console.log('connected!')
 }
 
-start()
+// Will run once connection is made
+client.on('connect', () => {
+  console.log('connected!')
+})
 
 ```
+
 
 ### `DetectionData` Format
 

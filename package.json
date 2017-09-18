@@ -1,6 +1,6 @@
 {
   "name": "ssl-vision",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Receive Multicast parsed data from Robocup SSL Vision with NodeJS",
   "main": "index.js",
   "repository": {

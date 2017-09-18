@@ -19,7 +19,11 @@ module.exports = class SSLClient extends EventEmitter {
     this.proto = proto
   }
 
-  connect () {
+  connect (listener) {
+    if (listener) {
+      this.on('connect', listener)
+    }
+
     return new Promise((resolve, reject) => {
       if (this.client) {
         throw new Error('Client is already open. Close the connection first')
@@ -38,6 +42,9 @@ module.exports = class SSLClient extends EventEmitter {
 
         // Resolve
         resolve()
+
+        // Emit connect
+        this.emit('connect')
       })
     })
   }
