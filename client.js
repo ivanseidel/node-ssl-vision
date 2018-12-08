@@ -51,8 +51,7 @@ module.exports = class SSLClient extends EventEmitter {
 
   _init() {
     var address = this.client.address()
-    this.client.setBroadcast(true)
-    this.client.setMulticastTTL(128) 
+    this.client.setMulticastTTL(10) 
     this.client.addMembership(this.HOST)
   }
 
